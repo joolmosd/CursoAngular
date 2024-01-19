@@ -1,0 +1,106 @@
+<h2>Reactivos: Básicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <form autocomplete="off" [formGroup]="myFormBuilder">
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Nombre del producto" formControlName="name">
+
+                    <span *ngIf="isValidField('name')"  class="form-text text-danger">
+                        <!-- Debe de ser de 3 letras -->
+                        {{getFieldError('name')}}
+                    </span>
+
+                    
+                </div>
+            </div>
+
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           placeholder="Precio del producto" formControlName="price">
+
+                    <span *ngIf="isValidField('price')"class="form-text text-danger">
+                        {{getFieldError('price')}}
+                    </span>
+
+                </div>
+            </div>
+
+            <!-- Campo de existencias -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Existencias</label>
+                <div class="col-sm-9">
+                    <input type="number"
+                           class="form-control"
+                           placeholder="Existencias del producto" formControlName="inStorage">
+
+                    <span *ngIf="isValidField('inStorage')" class="form-text text-danger">
+                        {{getFieldError('inStorage')}}
+                    </span>
+
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <button type="submit"
+                            class="btn btn-primary float-end"
+                            (click)="onSave()">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col">
+
+        <span>Valid</span>
+        <pre>{{ myFormBuilder.valid | json }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ myFormBuilder.pristine | json }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ myFormBuilder.touched | json }}</pre>
+
+        <span>Value</span>
+        <pre>{{ myFormBuilder.value | json }}</pre>
+
+        <span>Precio</span>
+        <pre>{{ myFormBuilder.controls['price'].value | json }}</pre>
+
+        <span>Precio- Errors</span>
+        <pre>{{ myFormBuilder.controls['price'].errors | json }}</pre>
+
+        <span>Producto</span>
+        <pre>{{ myFormBuilder.controls['name'].value| json }}</pre>
+
+        <span>Producto - Errors</span>
+        <pre>{{ myFormBuilder.controls['name'].errors| json }}</pre>
+
+    </div>
+</div>
