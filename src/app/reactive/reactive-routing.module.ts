@@ -14,7 +14,7 @@ const routes: Routes = [
 
       { path: 'basic',component: BasicPageComponent },
       { path: 'dynamic',component: DynamicPageComponent },
-      { path: 'swichtes',component: SwitchesPageComponent },
+      { path: 'switches',component: SwitchesPageComponent },
       { path: '**', redirectTo: 'basic'},
 
     ]

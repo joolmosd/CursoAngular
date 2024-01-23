@@ -15,9 +15,11 @@ interface MenuItem{
 export class SideMenuComponent implements OnInit {
   
   reactiveMenu: MenuItem[] = [
+
     { title: 'Básicos', route: './reactive/basic' },
     { title: 'Dinámicos', route: './reactive/dynamic' },
     { title: 'Switches', route: './reactive/switches' },
+    
   ];
 
   authMenu: MenuItem[] = [
